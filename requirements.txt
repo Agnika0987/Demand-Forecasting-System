@@ -1,8 +1,8 @@
-numpy==1.24.3        # Ensure compatibility with pmdarima and other libraries
-pandas==1.5.3       # Data manipulation
-streamlit==1.26.0   # Streamlit for the web app
-plotly==5.15.0      # Interactive plots
-matplotlib==3.8.0    # Basic plotting
-statsmodels==0.14.0  # Statistical models
-pmdarima==2.0.3      # Seasonal and non-seasonal ARIMA models
-prophet==1.2.4       # Forecasting tool
+numpy=1.26.4
+matplotlib=3.9.2
+plotly=5.22.0
+pandas=2.2.2
+streamlit=1.39.0
+statsmodels=0.14.2
+pmdarima=2.0.4
+prophet=1.1.6
