@@ -13,13 +13,13 @@ from prophet import Prophet
 #st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
-transaction_01 = pd.read_csv('C:\\Users\\Admin\\Pictures\\Sooth_sayer\\Transactional_data_retail_01.csv', low_memory=False)
+transaction_01 = pd.read_csv('https://github.com/Agnika0987/Demand-Forecasting-System/tree/main/Transactional_data_retail_01.csv', low_memory=False)
 
 transaction_01['InvoiceDate'] = pd.to_datetime(transaction_01['InvoiceDate'], format='%d %B %Y')
 
 # Format the parsed dates to 'dd-mm-yyyy'
 transaction_01['InvoiceDate'] = transaction_01['InvoiceDate'].dt.strftime('%d-%m-%Y')
-transaction_02  = pd.read_csv('C:\\Users\\Admin\\Pictures\\Sooth_sayer\\Transactional_data_retail_02.csv', low_memory=False)
+transaction_02  = pd.read_csv('https://github.com/Agnika0987/Demand-Forecasting-System/tree/main/Transactional_data_retail_02.csv', low_memory=False)
 
 transactions = pd.concat([transaction_01, transaction_02], ignore_index=True)
 
@@ -38,11 +38,11 @@ transactions['Year'] = transactions['InvoiceDate'].dt.year
 transactions['Month'] = transactions['InvoiceDate'].dt.month
 transactions['Week'] = transactions['InvoiceDate'].dt.isocalendar().week
 
-customer_data = pd.read_csv('C:\\Users\\Admin\\Pictures\\Sooth_sayer\\CustomerDemographics.csv')
+customer_data = pd.read_csv('https://github.com/Agnika0987/Demand-Forecasting-System/tree/main/CustomerDemographics.csv')
 customer_data['Customer ID'] = customer_data['Customer ID'].astype(str)
 customer_data['Customer ID'] = transactions['Customer ID'].str.replace(r'\.0$', '', regex=True)
 
-product_info = pd.read_csv('C:\\Users\\Admin\\Pictures\\Sooth_sayer\\ProductInfo.csv')
+product_info = pd.read_csv('https://github.com/Agnika0987/Demand-Forecasting-System/tree/main/ProductInfo.csv')
 product_info['Description'] = product_info['Description'].fillna('No Description')
 
 transactional_data = transactions.merge(customer_data, on='Customer ID', how='left').merge(product_info, on='StockCode', how='left')
