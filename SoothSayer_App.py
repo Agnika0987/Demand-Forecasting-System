@@ -12,7 +12,6 @@ from prophet import Prophet
 #from sklearn.model_selection import train_test_split
 #st.set_option('deprecation.showPyplotGlobalUse', False)
 
-https://raw.githubusercontent.com/Agnika0987/Demand-Forecasting-System/main/
 transaction_01 = pd.read_csv('https://raw.githubusercontent.com/Agnika0987/Demand-Forecasting-System/main/Transactional_data_retail_01.csv', low_memory=False)
 
 transaction_01['InvoiceDate'] = pd.to_datetime(transaction_01['InvoiceDate'], format='%d %B %Y')
